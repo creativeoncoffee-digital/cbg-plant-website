@@ -29,9 +29,9 @@ function App() {
               {/* <PageLoader /> */}
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="*" element={<AboutPage />} />
-              <Route path="*" element={<CbgPage />} />
-              <Route path="*" element={<BlogsPage />} />
+              <Route path="" element={<AboutPage />} />
+              <Route path="" element={<CbgPage />} />
+              <Route path="" element={<BlogsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               
               {/* Catch-all Route: The * acts as a wildcard. If the URL doesn't match the above routes, it renders this page */}
