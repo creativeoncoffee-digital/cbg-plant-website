@@ -29,7 +29,7 @@ function App() {
               {/* <PageLoader /> */}
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="" element={<AboutPage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="" element={<CbgPage />} />
               <Route path="" element={<BlogsPage />} />
               <Route path="/contact" element={<ContactPage />} />
