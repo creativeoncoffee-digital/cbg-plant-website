@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="text-2xl font-bold text-brand-white flex items-center gap-2 mb-4">
               <span className="text-brand-flame text-3xl">🔥</span>
-              EcoCBG
+            CBG
             </Link>
             <p className="text-gray-400 mb-4">
               Leading the transition to sustainable energy through advanced Compressed BioGas solutions. Reclaim. Reuse. Recycle.
@@ -39,17 +39,17 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-brand-flame inline-block pb-1">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>123 Green Energy Blvd.</li>
-              <li>Sustainability City, SC 12345</li>
-              <li className="mt-4">Email: info@ecocbg.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+              <li>xyg.</li>
+              <li>xyz</li>
+              <li className="mt-4">Email: info@cbg.com</li>
+              <li>Phone: +1 (555) xxx-4567</li>
             </ul>
           </div>
 
         </div>
         
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} EcoCBG Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} . All rights reserved.</p>
         </div>
       </div>
     </footer>
