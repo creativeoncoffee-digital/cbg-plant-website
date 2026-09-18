@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import MarqueBanner from './components/MarqueBanner';
-import PageLoader from './components/PageLoader'; // Import the new loader
+import PageLoader from './components/PageLoader';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -10,31 +9,30 @@ import AboutPage from './pages/AboutPage';
 import CbgPage from './pages/CbgPage';
 import BlogsPage from './pages/BlogsPage';
 import ContactPage from './pages/ContactPage';
-import NotFoundPage from './pages/NotFoundPage'; // Import the new 404 page
+import NotFoundPage from './pages/NotFoundPage';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col font-sans selection:bg-brand-greenLight selection:text-brand-white">
+      {/* Updated selection colors to match the neon dark theme */}
+      <div className="min-h-screen flex flex-col font-sans bg-brand-black text-brand-white selection:bg-brand-neon selection:text-brand-black">
         
-        {/* The loader sits globally and listens to route changes */}
-      
-        
-        <MarqueBanner />
+        {/* <PageLoader /> */}
+        <CustomCursor />
 
+        {/* Removed the Marquee here since the new theme uses a cleaner, more minimal header approach */}
+        
         <div className="relative flex-grow flex flex-col">
           <Navbar />
           
           <main className="flex-grow"> 
-              {/* <PageLoader /> */}
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="" element={<CbgPage />} />
-              <Route path="" element={<BlogsPage />} />
+              <Route path="/cbg" element={<CbgPage />} />
+              <Route path="/blogs" element={<BlogsPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              
-              {/* Catch-all Route: The * acts as a wildcard. If the URL doesn't match the above routes, it renders this page */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>

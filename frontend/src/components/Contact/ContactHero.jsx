@@ -1,61 +1,57 @@
-import { Phone, MessageSquare, Globe, MapPin } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const ContactHero = () => {
-  return (
-    // FIX: Removed md:w-1/2 so it fully fills its parent column
-    <div className="w-full flex flex-col pr-0 md:pr-10 mt-10 md:mt-0">
-      
+  const heroRef = useRef(null);
 
-      <h1 className="text-4xl md:text-5xl font-black text-brand-black leading-tight mb-6">
-        Partner with <span className="text-brand-greenDark">EcoCBG</span> for a Sustainable Future.
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Sleek staggered reveal for the typography
+      gsap.fromTo('.contact-text',
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' }
+      );
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={heroRef} className="w-full flex flex-col pr-0 md:pr-16 mt-10 md:mt-0">
+      
+      {/* Neon Kicker */}
+      <span className="contact-text text-brand-neon  tracking-[0.2em] uppercase text-xs mb-6">
+        Start a Project
+      </span>
+
+      {/* Massive Headline */}
+      <h1 className="contact-text text-5xl md:text-7xl font-black text-brand-white leading-[1.1] tracking-tight mb-8">
+        Let's build your <br/><span className="text-brand-neon">plant</span>
       </h1>
       
-      <p className="text-brand-black opacity-75 text-base md:text-lg mb-12 font-medium max-w-md">
-        Let's power your business with clean, efficient, and future-ready energy solutions. Reach out today to discuss your industrial requirements.
+      {/* Subtext */}
+      <p className="contact-text text-brand-gray text-base md:text-lg mb-16 font-medium max-w-md leading-relaxed">
+        Tell us about your feedstock, land and target capacity. Our engineering team responds with a feasibility view within 24 hours.
       </p>
 
-      {/* 2x2 Contact Info using flex wrap */}
-      <div className="flex flex-col md:flex-row md:flex-wrap gap-y-10 gap-x-4 w-full">
+      {/* Clean Metadata Block (Replacing old heavy icons) */}
+      <div className="flex flex-col gap-10 w-full">
         
-        {/* FIX: Changed md:w-[calc...] to md:w-[45%] to prevent squishing */}
-        <div className="flex flex-row items-start gap-4 w-full md:w-[45%]">
-          <div className="w-12 h-12 rounded-full bg-[#f6f4ec] flex items-center justify-center shrink-0">
-            <Phone className="text-brand-greenDark" size={20} />
-          </div>
-          <div className="flex flex-col">
-            <h3 className="font-bold text-brand-black mb-1">Call Us</h3>
-            <span className="text-sm text-gray-500 font-medium">+91 98765 43210</span>
-          </div>
+        <div className="contact-text flex flex-col gap-2">
+          <h3 className="text-[10px] md:text-xs font-bold text-brand-gray tracking-[0.2em] uppercase">
+            Head Office
+          </h3>
+          <span className="text-sm md:text-base text-brand-white font-medium leading-relaxed">
+            Sector 27 Industrial Area,<br/>Faridabad, Haryana 121003
+          </span>
         </div>
 
-        <div className="flex flex-row items-start gap-4 w-full md:w-[45%]">
-          <div className="w-12 h-12 rounded-full bg-[#f6f4ec] flex items-center justify-center shrink-0">
-            <MessageSquare className="text-brand-greenDark" size={20} />
-          </div>
-          <div className="flex flex-col">
-            <h3 className="font-bold text-brand-black mb-1">Fast Support</h3>
-            <span className="text-sm text-gray-500 font-medium">Quick response for all inquiries</span>
-          </div>
-        </div>
-
-        <div className="flex flex-row items-start gap-4 w-full md:w-[45%]">
-          <div className="w-12 h-12 rounded-full bg-[#f6f4ec] flex items-center justify-center shrink-0">
-            <Globe className="text-brand-greenDark" size={20} />
-          </div>
-          <div className="flex flex-col">
-            <h3 className="font-bold text-brand-black mb-1">Global Reach</h3>
-            <span className="text-sm text-gray-500 font-medium">Serving industries worldwide</span>
-          </div>
-        </div>
-
-        <div className="flex flex-row items-start gap-4 w-full md:w-[45%]">
-          <div className="w-12 h-12 rounded-full bg-[#f6f4ec] flex items-center justify-center shrink-0">
-            <MapPin className="text-brand-greenDark" size={20} />
-          </div>
-          <div className="flex flex-col break-words">
-            <h3 className="font-bold text-brand-black mb-1">Headquarters</h3>
-            <span className="text-sm text-gray-500 font-medium leading-relaxed">Sector 27 Industrial Area,<br/>Faridabad, Haryana</span>
-          </div>
+        <div className="contact-text flex flex-col gap-2">
+          <h3 className="text-[10px] md:text-xs font-bold text-brand-gray tracking-[0.2em] uppercase">
+            Email
+          </h3>
+          <a href="mailto:projects@ecocbg.com" className="text-sm md:text-base text-brand-neon font-medium hover:text-brand-white transition-colors">
+            projects@ecocbg.com
+          </a>
         </div>
 
       </div>

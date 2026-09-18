@@ -21,18 +21,17 @@ const ContactPage = () => {
   }, []);
 
   return (
-    // FIX: Increased top padding (pt-40) to clear the navbar
-    <div ref={containerRef} className="w-full min-h-screen bg-[#faf9f6] pt-40 pb-24 px-6 md:px-12 flex items-center justify-center">
+    // FIX: Changed the background class to bg-brand-black 
+    <div ref={containerRef} className="w-full min-h-screen bg-brand-black pt-40 pb-24 px-6 md:px-12 flex items-center justify-center">
       
-      {/* FIX: Ensure gap is manageable and children take distinct widths */}
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 justify-between items-center md:items-start">
         
-        {/* Left Side: 48% width */}
+        {/* Left Side: Hero Component */}
         <div className="contact-section w-full md:w-[48%] flex">
           <ContactHero />
         </div>
 
-        {/* Right Side: 48% width */}
+        {/* Right Side: Form Component */}
         <div className="contact-section w-full md:w-[48%] flex">
           <ContactForm />
         </div>
