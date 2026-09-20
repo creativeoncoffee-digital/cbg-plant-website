@@ -39,9 +39,9 @@ const Navbar = () => {
           <div className="hidden md:flex items-center justify-center space-x-8 w-2/4">
             <Link to="/" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Home</Link>
             <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>About Us</Link>
-            <Link to="*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>CBG</Link>
-            <Link to="*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Blogs</Link>
-            <Link to="/contact" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Contact</Link>
+            <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>CBG</Link>
+            <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Blogs</Link>
+            <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Contact</Link>
           </div>
 
           {/* Right: CTA Buttons */}
