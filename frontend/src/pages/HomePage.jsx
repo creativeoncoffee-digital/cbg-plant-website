@@ -14,8 +14,8 @@ const HomePage = () => {
       <HomeHero />
       <MarqueBanner />
 
-      <Manifesto />
-      <Machines />
+      {/* <Manifesto />
+      <Machines /> */}
       <StatsBanner />
       <Projects />
       {/* <HomeExtra /> */}
