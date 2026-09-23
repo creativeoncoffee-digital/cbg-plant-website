@@ -9,10 +9,10 @@ const HomeHero = () => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
       
-      // 1. Fade in the neon kicker text
+      // 1. Fade in the neon kicker text (changed to float UP for centered layout)
       tl.fromTo('.hero-kicker', 
-        { opacity: 0, x: -30 }, 
-        { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', delay: 0.2 }
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.2 }
       )
       // 2. Professional Masked Reveal for the massive typography
       .fromTo('.hero-line', 
@@ -38,7 +38,7 @@ const HomeHero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full min-h-screen flex items-center bg-brand-black overflow-hidden pt-40">
+    <section ref={heroRef} className="relative w-full min-h-screen flex items-center bg-brand-black overflow-hidden pt-32">
       
       {/* Background Image with Uniform Dark Overlay */}
       <div className="absolute inset-0 z-0 bg-brand-black">
@@ -47,31 +47,37 @@ const HomeHero = () => {
         <div className="absolute inset-0 bg-brand-black/70 mix-blend-multiply"></div>
       </div>
 
-      {/* Main Content Wrapper */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-start justify-center h-full">
+      {/* Main Content Wrapper - Shifted to center alignment */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center h-full text-center">
         
         {/* Kicker Tag */}
-        <div className="overflow-hidden mb-6 md:mb-10">
-          <span className="hero-kicker inline-block text-brand-neon text-xs md:text-sm  tracking-[0.2em] uppercase">
+        <div className="overflow-hidden mb-6 md:mb-8">
+          <span className="hero-kicker inline-block text-brand-neon text-xs md:text-sm tracking-[0.2em] uppercase">
             Bio-CBG Plant Manufacturers — India
           </span>
         </div>
         
-        {/* Massive Typography with overflow-hidden for the mask reveal effect */}
-        <h1 className="text-7xl md:text-8xl font-black text-brand-white leading-[0.9] tracking-wide uppercase mb-8">
-          <div className="overflow-hidden py-1"><div className="hero-line">Waste Becomes</div></div>
-          <div className="overflow-hidden py-1"><div className="hero-line text-brand-neon">Fuel.</div></div>
-          <div className="overflow-hidden py-1"><div className="hero-line">Farm Becomes</div></div>
-          <div className="overflow-hidden py-1"><div className="hero-line text-brand-neon">Fortune.</div></div>
+        {/* Massive Typography - Grouped into 2 wide lines for a cinematic centered look */}
+        <h1 className=" text-3xl md:text-7xl font-black text-brand-white leading-[1] tracking-wide uppercase mb-8 flex flex-col items-center">
+          <div className="overflow-hidden py-1 w-full">
+            <div className="hero-line">
+              Waste Becomes <span className="text-brand-neon">Fuel.</span>
+            </div>
+          </div>
+          <div className="overflow-hidden py-1 w-full">
+            <div className="hero-line">
+              Farm Becomes <span className="text-brand-neon">Fortune.</span>
+            </div>
+          </div>
         </h1>
         
-        {/* Subtext */}
-        <p className="hero-subtext text-brand-gray text-base md:text-lg max-w-xl font-medium leading-relaxed mb-16">
+        {/* Subtext - Centered with mx-auto */}
+        <p className="hero-subtext text-brand-gray text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed mb-16">
           We design, build and commission turnkey compressed biogas plants that convert organic waste into pipeline-grade green fuel — and profit.
         </p>
         
-        {/* Scroll Indicator */}
-        <div className="hero-scroll flex items-center gap-3 text-brand-gray text-xs font-bold tracking-widest uppercase mt-auto absolute bottom-12">
+        {/* Scroll Indicator - Snapped exactly to the bottom center */}
+        <div className="hero-scroll flex items-center justify-center gap-3 text-brand-gray text-xs font-bold tracking-widest uppercase absolute bottom-12 left-1/2 -translate-x-1/2 w-max">
           <span className="animate-bounce text-brand-white">↓</span> Scroll to explore
         </div>
 
