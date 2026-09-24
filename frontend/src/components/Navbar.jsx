@@ -31,7 +31,7 @@ const Navbar = () => {
           {/* Left: Logo */}
           <div className="flex items-center md:w-1/4">
             <Link to="/" className="flex items-center gap-2">
-             <img src={Logo} alt="CBG Plant Logo" className="h-9 md:h-12 w-auto object-contain" />  
+             <img src={Logo} alt="CBG Plant Logo" className="h-8 md:h-10 w-auto object-contain" />  
             </Link>
           </div>
 
