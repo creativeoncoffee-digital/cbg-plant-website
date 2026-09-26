@@ -11,6 +11,7 @@ import BlogsPage from './pages/BlogsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CustomCursor from './components/CustomCursor';
+import PageTransition from './components/PageTransition';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Navbar />
           
           <main className="flex-grow"> 
+            {/* 2. Wrap the Routes inside PageTransition */}
+            <PageTransition>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
@@ -35,6 +38,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
+            </PageTransition>
           </main>
         </div>
 

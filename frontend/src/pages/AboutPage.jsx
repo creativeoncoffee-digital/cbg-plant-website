@@ -9,9 +9,9 @@ const AboutPage = () => {
     <>
       <AboutHero />
       <OurStory />
-      {/* <VisionMission /> */}
+      <VisionMission />
       <Leadership />
-      {/* <StrategicAlliances /> */}
+      <StrategicAlliances />
     </>
   );
 };

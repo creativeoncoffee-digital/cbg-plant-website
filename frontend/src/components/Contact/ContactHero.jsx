@@ -49,8 +49,8 @@ const ContactHero = () => {
           <h3 className="text-[10px] md:text-xs font-bold text-brand-gray tracking-[0.2em] uppercase">
             Email
           </h3>
-          <a href="mailto:projects@ecocbg.com" className="text-sm md:text-base text-brand-neon font-medium hover:text-brand-white transition-colors">
-            projects@ecocbg.com
+          <a href="mailto:projects@recbg.com" className="text-sm md:text-base text-brand-neon font-medium hover:text-brand-white transition-colors">
+            projects@RyvedraCBG.com
           </a>
         </div>
 

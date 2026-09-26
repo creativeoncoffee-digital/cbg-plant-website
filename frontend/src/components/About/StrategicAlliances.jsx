@@ -9,9 +9,9 @@ const PartnerCard = ({ partner, index }) => {
       
       {/* Icon Header */}
       <div className="flex items-center justify-between mb-8">
-        <div className="w-14 h-14 rounded-sm bg-brand-black border border-white/10 flex items-center justify-center group-hover:border-brand-neon/50 group-hover:shadow-[0_0_15px_rgba(212,255,0,0.2)] transition-all duration-500">
+        {/* <div className="w-14 h-14 rounded-sm bg-brand-black border border-white/10 flex items-center justify-center group-hover:border-brand-neon/50 group-hover:shadow-[0_0_15px_rgba(212,255,0,0.2)] transition-all duration-500">
           {partner.icon}
-        </div>
+        </div> */}
         
         {/* Conditional External Link */}
         {partner.link && (
@@ -93,7 +93,7 @@ const StrategicAlliances = () => {
       role: "Technical Partner",
       subtitle: "Clean-Tech Engineering & Process Innovation",
       desc: "Serving as our core technical partner, Inventive Enviro Concepts Pvt. Ltd. delivers cutting-edge environmental engineering, process optimization, and technical guidance to ensure maximum gas purification efficiency, yield performance, and plant safety.",
-      link: null, // No link provided for this one
+       link: "https://inventiveenviro.com", // No link provided for this one
       icon: <Cpu className="text-brand-neon" size={28} />
     }
   ];
