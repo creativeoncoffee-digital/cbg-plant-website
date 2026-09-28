@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import Logo from '../assets/Logo.png';
 
 const Footer = () => {
   return (
@@ -43,7 +44,7 @@ const Footer = () => {
           {/* ========================================== */}
           <Link to="/" className="mb-8 inline-block w-fit">
             <img 
-              src="src/assets/Logo.png" 
+              src={Logo} 
               alt="Company Logo" 
               className="h-12 md:h-16 w-auto object-contain"
               // Fallback text just in case the image path is broken temporarily
