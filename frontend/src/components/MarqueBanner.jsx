@@ -21,14 +21,14 @@ const MarqueeBanner = () => {
   return (
     <div 
       ref={marqueeRef} 
-      className="bg-brand-greenDark text-brand-white overflow-hidden whitespace-nowrap py-2 flex items-center shadow-md relative z-40"
+      className="bg-brand-greenDark text-brand-white border border-gray-700 overflow-hidden whitespace-nowrap py-3 flex items-center shadow-md relative z-40"
     >
       <div className="marquee-content flex gap-12 min-w-max pr-12">
         {/* We duplicate the text block to create a seamless infinite scroll effect */}
-        <span className="text-base md:text-sm font-semibold tracking-widest uppercase">
+        <span className="text-base md:text-md font-semibold tracking-widest uppercase">
           🔥 Reclaim - Reuse - Recycle &nbsp;|&nbsp; Leading the Transition to Sustainable Energy &nbsp;|&nbsp; Advanced Compressed BioGas Solutions 🌱
         </span>
-        <span className="text-base md:text-sm font-semibold tracking-widest uppercase">
+        <span className="text-base md:text-md font-semibold tracking-widest uppercase">
           🔥 Reclaim - Reuse - Recycle &nbsp;|&nbsp; Leading the Transition to Sustainable Energy &nbsp;|&nbsp; Advanced Compressed BioGas Solutions 🌱
         </span>
       </div>

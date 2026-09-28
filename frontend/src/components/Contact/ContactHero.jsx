@@ -24,7 +24,7 @@ const ContactHero = () => {
       </span>
 
       {/* Massive Headline */}
-      <h1 className="contact-text text-5xl md:text-7xl font-black text-brand-white leading-[1.1] tracking-tight mb-8">
+      <h1 className="contact-text text-3xl md:text-6xl font-black text-brand-white leading-[1.1] tracking-tight mb-8">
         Let's build your <br/><span className="text-brand-neon">plant</span>
       </h1>
       

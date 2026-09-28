@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link to="/" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Home</Link>
             <Link to="/about" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>About Us</Link>
             <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>CBG</Link>
-            <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Blogs</Link>
+            <Link to="blogs" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Blogs</Link>
             <Link to="/contact" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Contact</Link>
           </div>
 
