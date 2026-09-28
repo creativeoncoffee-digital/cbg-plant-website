@@ -17,11 +17,11 @@ const HomePage = () => {
       <HomeHero />
       <MarqueBanner />
 
-      <Manifesto />
-      <Machines />
+     <Solutions />
+      {/* <Machines /> */}
       <StatsBanner />
-      <Projects />
-      <Solutions />
+      {/* <Projects /> */}
+     
       <EndToEnd />
 
 
