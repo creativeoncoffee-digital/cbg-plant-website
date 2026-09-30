@@ -44,7 +44,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full min-h-[75vh] flex flex-col items-center justify-center bg-brand-black overflow-hidden pt-32 pb-20 px-6 md:px-12">
+    <section ref={heroRef} className="relative w-full min-h-[100vh] flex flex-col items-center justify-center bg-brand-black overflow-hidden pt-32 pb-20 px-6 md:px-12">
       
       {/* NEW: Background Banner Image with Dark Overlays (z-0) */}
       <div className="absolute inset-0 z-0 bg-brand-black">

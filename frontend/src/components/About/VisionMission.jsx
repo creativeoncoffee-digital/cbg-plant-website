@@ -12,27 +12,27 @@ const VisionMission = () => {
   const data = [
     {
       id: "01",
-      tag: "Our Vision",
-      icon: <Eye className="text-brand-neon" size={24} />,
+      tag: "OUR VISION",
+      icon: <Eye className="text-[#3c6e4b]" size={18} />,
       headline: "To stand as a premier catalyst in India’s green energy landscape.",
       desc: "Converting agricultural residue and organic waste into high-grade renewable fuel while empowering rural agrarian economies.",
-      img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2070&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000&auto=format&fit=crop"
     },
     {
       id: "02",
-      tag: "Our Mission",
-      icon: <Target className="text-brand-neon" size={24} />,
+      tag: "OUR MISSION",
+      icon: <Target className="text-[#3c6e4b]" size={18} />,
       headline: "To engineer, build, and operate scalable, highly efficient infrastructure.",
       desc: "Through cross-disciplinary innovation, strong government policy integration, and unyielding ground-level execution.",
-      img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000&auto=format&fit=crop"
     }
   ];
 
-  // Auto-cycle every 6 seconds
+  // Auto-cycle every 7 seconds
   useEffect(() => {
     timerRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 6000);
+    }, 7000);
     
     return () => clearInterval(timerRef.current);
   }, []);
@@ -42,104 +42,113 @@ const VisionMission = () => {
     if (inView) {
       gsap.fromTo(containerRef.current,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+        { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out' }
       );
     }
   }, [inView]);
 
   return (
-    <section ref={ref} className="w-full bg-brand-black py-20 md:py-32 px-6 md:px-12 border-t border-white/10">
-      <div ref={containerRef} className="w-full max-w-7xl mx-auto opacity-0">
+    
+    <section 
+      ref={ref} 
+      className="relative w-full py-24 md:py-32 px-6 md:px-12 bg-fixed bg-center bg-cover flex items-center justify-center min-h-[90vh]"
+      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop')" }}
+    >
+      
+    
+      <div className="absolute inset-0 bg-[#f4f6ef]/90 mix-blend-multiply"></div>
+      <div clasName = "absolute inset-0 bg-[#0f2517]/60"></div>
+
+      {/* MAIN CENTERED CARD */}
+      <div ref={containerRef} className="relative z-10 w-full max-w-5xl mx-auto opacity-0 shadow-[0_30px_60px_rgba(15,37,23,0.15)] rounded-2xl overflow-hidden bg-[#f4f6ef]">
         
-        {/* Main Wrapper */}
-        <div className="flex flex-col md:flex-row w-full min-h-[600px] border border-white/10 bg-brand-surface/20 overflow-hidden">
+        <div className="flex flex-col md:flex-row w-full min-h-[500px]">
           
           {/* Left Side: Images */}
-          <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+          <div className="relative w-full md:w-1/2 h-72 md:h-auto overflow-hidden bg-[#0f2517]">
             {data.map((item, index) => (
-              <img 
+              <div 
                 key={`img-${index}`}
-                src={item.img}
-                alt={item.tag}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  activeIndex === index ? 'opacity-100 scale-100 grayscale-[20%]' : 'opacity-0 scale-110 grayscale'
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
-              />
+              >
+                <img 
+                  src={item.img}
+                  alt={item.tag}
+                  className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${
+                    activeIndex === index ? 'scale-105' : 'scale-100'
+                  }`}
+                />
+              </div>
             ))}
-            <div className="absolute inset-0 bg-brand-black/40 mix-blend-multiply"></div>
           </div>
 
-          {/* Right Side: Content */}
-          <div className="relative w-full md:w-1/2 flex flex-col p-10 md:p-16 justify-center">
+          {/* Right Side: Solid Cream Content Area */}
+          <div className="relative w-full md:w-1/2 flex flex-col p-10 md:p-14 justify-center bg-[#f4f6ef]">
             
-            {/* Background Number */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] font-black text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.03)] pointer-events-none select-none z-0">
-              {data[activeIndex].id}
-            </div>
-
-            {/* Crossfading Content */}
-            <div className="relative z-10 w-full h-[300px]">
+            {/* Crossfading Content Wrapper */}
+            <div className="relative z-10 w-full h-[280px]">
               {data.map((item, index) => (
                 <div 
                   key={`content-${index}`}
                   className={`absolute inset-0 flex flex-col transition-all duration-700 ease-in-out ${
-                    activeIndex === index ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-10 pointer-events-none'
+                    activeIndex === index ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
                   }`}
                 >
-                  <div className="flex items-center gap-4 mb-8">
-                    {/* <div className="w-14 h-14 rounded-full border border-brand-neon/30 bg-brand-neon/5 flex items-center justify-center">
+                  {/* Icon & Tag */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-8 h-8 rounded-full border border-[#3c6e4b]/20 flex items-center justify-center">
                       {item.icon}
-                    </div> */}
-                    <h2 className="text-brand-neon font-bold tracking-[0.2em] uppercase text-sm">
+                    </div>
+                    <h2 className="text-[#3c6e4b] font-bold tracking-[0.15em] uppercase text-xs">
                       {item.tag}
                     </h2>
                   </div>
                   
-                  <h3 className="text-3xl md:text-4xl font-black text-brand-white leading-snug tracking-tight mb-6">
+                  {/* Headline */}
+                  <h3 className="text-3xl md:text-4xl font-black text-[#0f2517] leading-tight tracking-tight mb-5">
                     {item.headline}
                   </h3>
                   
-                  <p className="text-brand-gray text-base md:text-lg font-medium leading-relaxed border-l-2 border-brand-neon pl-4">
+                  {/* Description */}
+                  <p className="text-[#0f2517]/75 text-sm md:text-base font-medium leading-relaxed max-w-sm">
                     {item.desc}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Bottom Progress/Navigation */}
-            <div className="relative z-10 flex items-center gap-6 mt-12 pt-8 border-t border-white/10">
+            {/* Bottom Progress/Navigation Area */}
+            <div className="relative z-10 flex items-center justify-between w-full mt-auto pt-6">
+              
               <button 
-                onClick={() => {
-                  setActiveIndex(0);
-                  clearInterval(timerRef.current);
-                }}
-                className={`text-xs font-bold tracking-widest uppercase transition-colors ${activeIndex === 0 ? 'text-brand-neon' : 'text-brand-gray hover:text-brand-white'}`}
+                onClick={() => { setActiveIndex(0); clearInterval(timerRef.current); }}
+                className={`text-[10px] md:text-xs font-bold tracking-widest uppercase transition-colors duration-300 ${activeIndex === 0 ? 'text-[#0f2517]' : 'text-[#0f2517]/30 hover:text-[#0f2517]'}`}
               >
-                Vision
+                01 VISION
               </button>
               
               {/* Animated Progress Bar */}
-              <div className="flex-grow h-1 bg-white/10 rounded-full overflow-hidden relative">
+              <div className="flex-grow mx-4 h-[2px] bg-[#0f2517]/10 relative overflow-hidden">
                 <div 
-                  className="absolute top-0 left-0 h-full bg-brand-neon"
+                  className="absolute top-0 left-0 h-full bg-[#0f2517]"
                   style={{
                     width: '100%',
-                    transition: activeIndex !== null ? 'transform 6s linear' : 'none',
+                    transition: activeIndex !== null ? 'transform 7s linear' : 'none',
                     transform: 'translateX(0%)',
-                    animation: 'progressFill 6s infinite linear'
+                    animation: 'progressFill 7s infinite linear'
                   }}
                 ></div>
               </div>
               
               <button 
-                onClick={() => {
-                  setActiveIndex(1);
-                  clearInterval(timerRef.current);
-                }}
-                className={`text-xs font-bold tracking-widest uppercase transition-colors ${activeIndex === 1 ? 'text-brand-neon' : 'text-brand-gray hover:text-brand-white'}`}
+                onClick={() => { setActiveIndex(1); clearInterval(timerRef.current); }}
+                className={`text-[10px] md:text-xs font-bold tracking-widest uppercase transition-colors duration-300 ${activeIndex === 1 ? 'text-[#0f2517]' : 'text-[#0f2517]/30 hover:text-[#0f2517]'}`}
               >
-                Mission
+                02 MISSION
               </button>
+
             </div>
             
           </div>
