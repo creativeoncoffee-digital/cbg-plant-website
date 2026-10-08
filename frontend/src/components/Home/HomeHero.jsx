@@ -48,7 +48,7 @@ const HomeHero = () => {
       </div>
 
       {/* Main Content Wrapper - Shifted to center alignment */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center h-full text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center justify-center h-full text-center">
         
         {/* Kicker Tag */}
         <div className="overflow-hidden mb-6 md:mb-8">
@@ -58,7 +58,7 @@ const HomeHero = () => {
         </div>
         
         {/* Massive Typography - Grouped into 2 wide lines for a cinematic centered look */}
-        <h1 className=" text-3xl md:text-7xl font-black text-brand-white leading-[1] tracking-wide uppercase mb-8 flex flex-col items-center">
+        <h1 className=" text-3xl md:text-6xl font-bold text-brand-white leading-[1] tracking-wide uppercase mb-8 flex flex-col items-center">
           <div className="overflow-hidden py-1 w-full">
             <div className="hero-line">
               Waste Becomes <span className="text-brand-neon">Fuel.</span>

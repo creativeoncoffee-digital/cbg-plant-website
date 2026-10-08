@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 
-const StoryItem = ({ year, title, content, index }) => {
+const StoryItem = ({ year, title, content }) => {
   const { ref, inView } = useInView({ 
     triggerOnce: true, 
     threshold: 0.2 
