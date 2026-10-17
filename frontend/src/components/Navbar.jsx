@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, PhoneCall, ArrowUpRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, PhoneCall, ArrowRight } from 'lucide-react';
 import Logo from '../assets/Logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,14 +17,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // In the new dark theme, the text remains white whether scrolled or not
-  const navTextColor = 'text-brand-white';
+  // Force white navbar on Blogs and Contact pages, or if user scrolls
+  const forceWhiteNav = location.pathname.includes('/blogs') || location.pathname.includes('/contact'); // location.pathname.includes('/blogs') || location.pathname.includes('/contact')
+  const isWhiteNav = isScrolled || forceWhiteNav;
+
+  // Dynamic Styles
+  const navLinkStyle = `text-sm font-bold transition-all duration-300 relative after:absolute after:bottom-[-6px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 ${
+    isWhiteNav 
+      ? 'text-[#0f2517] hover:text-[#3c6e4b] after:bg-[#3c6e4b]' 
+      : 'text-[#0f2517] hover:text-[#3c6e4b] after:bg-[#3c6e4b]' // Changed to be dark by default to match the new white hero
+  }`;
 
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-500 ${
-        // Fully transparent at the top, switches to a dark translucent blur on scroll
-        isScrolled ? 'bg-brand-black/55 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
+        isWhiteNav ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] py-4' : 'bg-transparent py-6'
       }`}
     >
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
@@ -31,65 +40,80 @@ const Navbar = () => {
           {/* Left: Logo */}
           <div className="flex items-center md:w-1/4">
             <Link to="/" className="flex items-center gap-2">
-             <img src={Logo} alt="CBG Plant Logo" className="h-8 md:h-10 w-auto object-contain" />  
+              <img 
+                src={Logo} 
+                alt="CBG Plant Logo" 
+                className={`h-8 md:h-10 w-auto object-contain transition-all duration-300 ${
+                  isWhiteNav ? 'brightness-70' : 'brightness-0' // Always black/dark to match white hero
+                }`} 
+              />  
             </Link>
           </div>
 
-          {/* Center: Desktop Navigation (As requested) */}
+          {/* Center: Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center space-x-8 w-2/4">
-            <Link to="/" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Home</Link>
-            <Link to="/about" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>About Us</Link>
-            <Link to="/*" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>CBG</Link>
-            <Link to="blogs" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Blogs</Link>
-            <Link to="/contact" className={`${navTextColor} hover:text-brand-neon transition-colors text-sm text-gray-300`}>Contact</Link>
+            <Link to="/" className={navLinkStyle}>Home</Link>
+            <Link to="/about" className={navLinkStyle}>About Us</Link>
+            <Link to="/*" className={navLinkStyle}>CBG</Link>
+            <Link to="/blogs" className={navLinkStyle}>Blogs</Link>
+            <Link to="/contact" className={navLinkStyle}>Contact</Link>
           </div>
 
           {/* Right: CTA Buttons */}
           <div className="hidden md:flex items-center justify-end space-x-6 w-1/4">
-             {/* Secondary Phone Button matched to dark theme */}
+            
+            {/* Phone/Search Icon Circle */}
             <a 
               href="tel:+15551234567" 
-              className="border border-white/20 w-11 h-11 rounded-full flex items-center justify-center text-brand-white hover:border-brand-neon hover:text-brand-neon transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,255,0,0.2)]"
+              className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 border ${
+                isWhiteNav 
+                  ? 'border-[#0f2517]/20 text-[#0f2517] hover:border-[#3c6e4b] hover:text-[#3c6e4b] bg-white' 
+                  : 'border-[#0f2517]/20 text-[#0f2517] hover:border-[#3c6e4b] hover:text-[#3c6e4b] bg-white/50' // Darker default for white hero
+              }`}
             >
               <PhoneCall size={18} />
             </a>
-            {/* New Huge Animation Neon Button */}
+            
+            {/* Pill-Shaped Get in Touch Button */}
             <Link
               to="/contact"
-              className="group relative overflow-hidden bg-brand-neon text-brand-black px-7 py-3 font-medium text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,255,0,0.4)]"
+              className={`group relative overflow-hidden px-8 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+                isWhiteNav 
+                  ? 'bg-[#3c6e4b] text-white hover:bg-[#2c8450]' 
+                  : 'bg-[#d4ff00] text-[#0f2517]'
+              }`}
             >
-              <span className="relative z-10 tracking-tight uppercase">Get in Touch</span>
-              <ArrowUpRight
+              <span className="relative z-10 tracking-wide uppercase">Get in Touch</span>
+              <ArrowRight
                 size={18}
-                className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1"
               />
-              {/* Sweeping background flash effect */}
-              <div className="absolute inset-0 h-full w-0 bg-white/40 group-hover:w-full transition-all duration-500 ease-out z-0"></div>
+              {/* <div className="absolute inset-0 h-full w-0 bg-white/0 group-hover:w-full transition-all duration-500 ease-out z-0"></div> */}
             </Link>
 
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className={`${navTextColor} hover:text-brand-neon transition-colors`}>
+            <button onClick={() => setIsOpen(!isOpen)} className={`transition-colors ${isWhiteNav ? 'text-[#0f2517]' : 'text-[#0f2517]'}`}>
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown (Dark Theme) */}
+      {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-brand-black/95 backdrop-blur-xl absolute top-full left-0 w-full shadow-2xl border-t border-white/10">
+        <div className={`md:hidden absolute top-full left-0 w-full shadow-2xl transition-all duration-300 border-t ${isWhiteNav ? 'bg-white border-[#0f2517]/10' : 'bg-white border-[#0f2517]/10'}`}>
           <div className="px-6 py-6 flex flex-col space-y-5">
-            <Link to="/" className="text-brand-white hover:text-brand-neon font-bold text-lg tracking-wide uppercase">Home</Link>
-            <Link to="/about" className="text-brand-white hover:text-brand-neon font-bold text-lg tracking-wide uppercase">About Us</Link>
-            <Link to="*" className="text-brand-white hover:text-brand-neon font-bold text-lg tracking-wide uppercase">CBG</Link>
-            <Link to="*" className="text-brand-white hover:text-brand-neon font-bold text-lg tracking-wide uppercase">Blogs</Link>
-            <Link to="/contact" className="text-brand-white hover:text-brand-neon font-bold text-lg tracking-wide uppercase">Contact</Link>
+            <Link to="/" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Home</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>About Us</Link>
+            <Link to="*" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>CBG</Link>
+            <Link to="/blogs" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Blogs</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Contact</Link>
             
-            <div className="pt-6 border-t border-white/10 flex flex-col gap-4">
-              <Link to="/contact" className="bg-brand-neon text-brand-black px-6 py-4 font-black text-center uppercase tracking-widest hover:bg-white transition-colors">
+            <div className={`pt-6 border-t flex flex-col gap-4 ${isWhiteNav ? 'border-[#0f2517]/10' : 'border-[#0f2517]/10'}`}>
+              <Link to="/contact" onClick={() => setIsOpen(false)} className={`rounded-full px-6 py-4 font-black text-center uppercase tracking-widest transition-colors ${isWhiteNav ? 'bg-[#9bcc4c] text-[#0f2517]' : 'bg-[#d4ff00] text-[#0f2517]'}`}>
                 Get Quote
               </Link>
             </div>

@@ -3,47 +3,43 @@ import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { ArrowUpRight, ShieldCheck, Cpu } from 'lucide-react';
 
-const PartnerCard = ({ partner, index }) => {
+const PartnerCard = ({ partner }) => {
   return (
-    <div className="partner-card group relative w-full md:w-1/2 flex flex-col p-8 md:p-12 border border-white/10 bg-brand-surface/30 transition-all duration-500 hover:border-brand-neon hover:bg-brand-surface/50">
+    <div className="partner-card group relative w-full md:w-1/2 flex flex-col p-8 md:p-10 bg-white rounded-3xl border border-[#0f2517]/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
       
-      {/* Icon Header */}
       <div className="flex items-center justify-between mb-8">
-        {/* <div className="w-14 h-14 rounded-sm bg-brand-black border border-white/10 flex items-center justify-center group-hover:border-brand-neon/50 group-hover:shadow-[0_0_15px_rgba(212,255,0,0.2)] transition-all duration-500">
+        <div className="w-12 h-12 rounded-xl bg-[#f4f6ef] border border-[#0f2517]/5 flex items-center justify-center group-hover:bg-[#d4ff00] transition-colors duration-500">
           {partner.icon}
-        </div> */}
+        </div>
         
-        {/* Conditional External Link */}
         {partner.link && (
           <a 
             href={partner.link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-brand-gray hover:text-brand-neon transition-colors duration-300"
+            className="flex items-center gap-2 text-[#0f2517]/40 hover:text-[#0f2517] transition-colors duration-300"
           >
-            <span className="text-xs font-bold uppercase tracking-widest hidden md:block">Visit Site</span>
-            <ArrowUpRight size={20} className="transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <span className="text-[10px] font-bold uppercase tracking-widest hidden md:block">Visit Site</span>
+            <ArrowUpRight size={18} className="transform transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         )}
       </div>
 
-      {/* Role Tag */}
-      <span className="text-brand-neon font-bold tracking-[0.15em] uppercase text-xs mb-3 block">
+      <span className="text-[#3c6e4b] font-bold tracking-[0.15em] uppercase text-[10px] mb-3 block">
         {partner.role}
       </span>
 
-      {/* Name & Subtitle */}
-      <h3 className="text-2xl md:text-3xl font-black text-brand-white mb-4">
+      <h3 className="text-xl md:text-2xl font-black text-[#0f2517] mb-4 leading-snug">
         {partner.name}
       </h3>
-      <div className="border-l-2 border-brand-neon pl-4 mb-6">
-        <span className="text-brand-white text-sm md:text-base font-bold leading-snug">
+      
+      <div className="bg-[#f4f6ef] px-4 py-3 rounded-lg border border-[#0f2517]/5 mb-6">
+        <span className="text-[#0f2517] text-xs md:text-sm font-bold leading-snug">
           {partner.subtitle}
         </span>
       </div>
 
-      {/* Description */}
-      <p className="text-brand-gray text-base md:text-lg font-medium leading-relaxed mt-auto">
+      <p className="text-[#0f2517]/70 text-sm md:text-base font-medium leading-relaxed mt-auto">
         {partner.desc}
       </p>
 
@@ -52,26 +48,20 @@ const PartnerCard = ({ partner, index }) => {
 };
 
 const StrategicAlliances = () => {
-  const { ref, inView } = useInView({ 
-    triggerOnce: true, 
-    threshold: 0.1 
-  });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const containerRef = useRef(null);
 
   useEffect(() => {
     if (inView) {
       const ctx = gsap.context(() => {
         const tl = gsap.timeline();
-        
-        // Header Reveal
         tl.fromTo('.alliance-header',
           { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' }
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' }
         )
-        // Cards Reveal
         .fromTo('.partner-card',
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out' },
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
           '-=0.4'
         );
       }, containerRef);
@@ -86,40 +76,34 @@ const StrategicAlliances = () => {
       subtitle: "Industrial Infrastructure & Gas Engineering Excellence",
       desc: "As our joint venture partner, Inventive Gas Equipments Pvt. Ltd. provides the robust industrial foundation, high-capacity gas handling infrastructure, and specialized equipment engineering essential to building reliable, high-yield bio-energy facilities.",
       link: "https://igequipment.com",
-      icon: <ShieldCheck className="text-brand-neon" size={28} />
+      icon: <ShieldCheck className="text-[#0f2517]" size={20} />
     },
     {
       name: "Inventive Enviro Concepts Pvt. Ltd.",
       role: "Technical Partner",
       subtitle: "Clean-Tech Engineering & Process Innovation",
       desc: "Serving as our core technical partner, Inventive Enviro Concepts Pvt. Ltd. delivers cutting-edge environmental engineering, process optimization, and technical guidance to ensure maximum gas purification efficiency, yield performance, and plant safety.",
-       link: "https://inventiveenviro.com", // No link provided for this one
-      icon: <Cpu className="text-brand-neon" size={28} />
+      link: "https://inventiveenviro.com",
+      icon: <Cpu className="text-[#0f2517]" size={20} />
     }
   ];
 
   return (
-    <section ref={ref} className="w-full bg-brand-black py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
-      <div ref={containerRef} className="w-full max-w-7xl mx-auto flex flex-col">
+    <section ref={ref} className="w-full bg-[#f4f6ef] py-24 md:py-32 px-6 md:px-12 border-t border-[#0f2517]/5">
+      <div ref={containerRef} className="w-full max-w-6xl mx-auto flex flex-col items-center">
         
-        {/* Header Section (No text stroke here) */}
         <div className="flex flex-col mb-12 md:mb-16 text-center items-center">
-          <span className="alliance-header text-brand-neon font-bold tracking-[0.2em] uppercase text-xs mb-4">
+          <span className="alliance-header text-[#3c6e4b] font-bold tracking-[0.2em] uppercase text-xs mb-4">
             Network & Integration
           </span>
-          <h2 className="alliance-header text-4xl md:text-5xl font-black text-brand-white tracking-tight uppercase">
+          <h2 className="alliance-header text-3xl md:text-5xl font-black text-[#0f2517] tracking-tight uppercase leading-[1.1]">
             Strategic Alliances
           </h2>
         </div>
 
-        {/* Partners Grid */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full">
           {partnersData.map((partner, index) => (
-            <PartnerCard 
-              key={index} 
-              partner={partner} 
-              index={index} 
-            />
+            <PartnerCard key={index} partner={partner} />
           ))}
         </div>
 
