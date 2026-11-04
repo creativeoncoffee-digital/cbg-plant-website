@@ -37,10 +37,10 @@ const StatItem = ({ stat, index, total }) => {
 
   return (
     <div ref={ref} className={`w-full md:w-1/4 flex ${index !== total - 1 ? 'border-b md:border-b-0 md:border-r border-[#f4f6ef]/10' : ''}`}>
-      <div ref={itemRef} className="group relative overflow-hidden flex flex-col justify-center p-10 md:p-16 w-full h-full opacity-0">
+      <div ref={itemRef} className="group relative overflow-hidden flex flex-col  item-center justify-center p-10 md:p-8 w-full h-full opacity-0">
         <div className="absolute inset-0 h-full w-0 bg-[#163321] group-hover:w-full transition-all duration-500 ease-out z-0"></div>
         <div className="relative z-10 flex flex-col">
-          <span className="text-5xl md:text-6xl font-black text-[#d4ff00] mb-4 tracking-tighter drop-shadow-sm">
+          <span className="text-3xl md:text-5xl font-semibold text-[#d4ff00] mb-4 tracking-tighter drop-shadow-sm">
             {displayValue}
           </span>
           <span className="text-[#f4f6ef]/80 text-sm md:text-base font-medium leading-relaxed max-w-[200px] whitespace-pre-line">
@@ -61,7 +61,7 @@ const StatsBanner = () => {
   ];
 
   return (
-    <section className="w-full bg-[#0f2517] flex items-center pt-10 pb-20">
+    <section className="w-full bg-[#0f2517] flex items-center pt-10 pb-10">
       <div className="w-full flex flex-col md:flex-row border-y border-[#f4f6ef]/10">
         {stats.map((stat, index) => (
           <StatItem key={index} stat={stat} index={index} total={stats.length} />

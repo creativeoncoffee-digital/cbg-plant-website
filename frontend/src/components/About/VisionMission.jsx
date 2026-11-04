@@ -7,13 +7,12 @@ const VisionMission = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
   const containerRef = useRef(null);
-  const timerRef = useRef(null);
 
   const data = [
     {
       id: "01",
       tag: "OUR VISION",
-      icon: <Eye className="text-[#3c6e4b]" size={16} />,
+      icon: <Eye className="text-[#d4ff00]" size={18} strokeWidth={2} />,
       headline: "To stand as a premier catalyst in India’s green energy landscape.",
       desc: "Converting agricultural residue and organic waste into high-grade renewable fuel while empowering rural agrarian economies.",
       img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000&auto=format&fit=crop"
@@ -21,20 +20,22 @@ const VisionMission = () => {
     {
       id: "02",
       tag: "OUR MISSION",
-      icon: <Target className="text-[#3c6e4b]" size={16} />,
+      icon: <Target className="text-[#d4ff00]" size={18} strokeWidth={2} />,
       headline: "To engineer, build, and operate scalable, highly efficient infrastructure.",
       desc: "Through cross-disciplinary innovation, strong government policy integration, and unyielding ground-level execution.",
       img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000&auto=format&fit=crop"
     }
   ];
 
+  // Auto-play timer that correctly resets when activeIndex changes
   useEffect(() => {
-    timerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
       setActiveIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 7000);
-    return () => clearInterval(timerRef.current);
-  }, []);
+    }, 7000); // 7 second duration
+    return () => clearInterval(timer);
+  }, [activeIndex]);
 
+  // Section reveal animation
   useEffect(() => {
     if (inView) {
       gsap.fromTo(containerRef.current,
@@ -47,91 +48,102 @@ const VisionMission = () => {
   return (
     <section 
       ref={ref} 
-      className="w-full py-24 md:py-32 px-6 md:px-12 bg-white flex items-center justify-center min-h-[80vh] border-t border-[#0f2517]/5"
+      className="w-full py-24 md:py-32 px-6 md:px-12 bg-[#0f2517] flex items-center justify-center min-h-[80vh] relative overflow-hidden"
     >
-      <div ref={containerRef} className="relative z-10 w-full max-w-6xl mx-auto opacity-0 shadow-lg rounded-[2rem] overflow-hidden bg-white border border-[#0f2517]/5">
-        
-        <div className="flex flex-col md:flex-row w-full min-h-[450px]">
+      {/* Background Image with Deep Green Overlay (Inherited from Benefits Section) */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop" 
+          alt="Agriculture Field" 
+          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-[#0f2517]/80"></div>
+        {/* Subtle radial gradient for center focus */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0f2517_100%)]"></div>
+      </div>
+
+      <div 
+        ref={containerRef} 
+        className="relative z-10 w-full max-w-6xl mx-auto opacity-0 shadow-2xl rounded-[2.5rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md"
+      >
+        <div className="flex flex-col md:flex-row w-full min-h-[420px]">
           
           {/* Left Side: Images */}
-          <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden bg-[#f4f6ef]">
+          <div className="relative w-full md:w-1/2 h-72 md:h-auto overflow-hidden bg-[#0f2517]">
             {data.map((item, index) => (
-              <div 
+              <img 
                 key={`img-${index}`}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                src={item.img}
+                alt={item.tag}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] ease-in-out ${
+                  activeIndex === index ? 'opacity-80 scale-100 z-10' : 'opacity-0 scale-110 z-0'
                 }`}
-              >
-                <img 
-                  src={item.img}
-                  alt={item.tag}
-                  className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${
-                    activeIndex === index ? 'scale-105' : 'scale-100'
-                  }`}
-                />
-              </div>
+              />
             ))}
+            {/* Gradient Overlay to blend image into the dark card */}
+            <div className="absolute inset-0 z-20 bg-gradient-to-t md:bg-gradient-to-l from-[#0f2517] md:from-[#0f2517]/90 via-[#0f2517]/20 to-transparent"></div>
           </div>
 
           {/* Right Side: Content Area */}
-          <div className="relative w-full md:w-1/2 flex flex-col p-8 md:p-14 justify-center bg-white">
+          <div className="relative w-full md:w-1/2 flex flex-col p-8 md:p-14 justify-center bg-transparent z-30 -mt-10 md:mt-0">
             
-            <div className="relative z-10 w-full h-[260px]">
+            {/* Text Crossfade Container */}
+            <div className="relative z-10 w-full h-[240px] md:h-[220px]">
               {data.map((item, index) => (
                 <div 
                   key={`content-${index}`}
-                  className={`absolute inset-0 flex flex-col transition-all duration-700 ease-in-out ${
-                    activeIndex === index ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+                  className={`absolute inset-0 flex flex-col transition-all duration-700 ease-out ${
+                    activeIndex === index ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
                   }`}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-full bg-[#f4f6ef] border border-[#0f2517]/5 flex items-center justify-center">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/5 flex items-center justify-center backdrop-blur-sm">
                       {item.icon}
                     </div>
-                    <h2 className="text-[#3c6e4b] font-bold tracking-[0.15em] uppercase text-[10px]">
+                    <h2 className="text-[#d4ff00] font-bold tracking-[0.2em] uppercase text-xs">
                       {item.tag}
                     </h2>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-black text-[#0f2517] leading-snug tracking-tight mb-4">
+                  <h3 className="text-2xl md:text-3xl  font-semibold text-white leading-[1.1] tracking-tight mb-4">
                     {item.headline}
                   </h3>
                   
-                  <p className="text-[#0f2517]/70 text-sm md:text-base font-medium leading-relaxed max-w-sm">
+                  <p className="text-white/70 text-sm md:text-base font-medium leading-relaxed max-w-sm">
                     {item.desc}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Bottom Progress Navigation */}
-            <div className="relative z-10 flex items-center justify-between w-full mt-auto pt-6 border-t border-[#0f2517]/5">
+            {/* Bottom Dual Progress Navigation */}
+            <div className="mt-8 pt-8 flex items-center gap-6 border-t border-white/10">
               
-              <button 
-                onClick={() => { setActiveIndex(0); clearInterval(timerRef.current); }}
-                className={`text-[10px] font-bold tracking-widest uppercase transition-colors duration-300 ${activeIndex === 0 ? 'text-[#0f2517]' : 'text-[#0f2517]/30 hover:text-[#0f2517]'}`}
-              >
-                01 VISION
-              </button>
-              
-              <div className="flex-grow mx-4 h-[2px] bg-[#0f2517]/5 relative overflow-hidden rounded-full">
-                <div 
-                  className="absolute top-0 left-0 h-full bg-[#3c6e4b]"
-                  style={{
-                    width: '100%',
-                    transition: activeIndex !== null ? 'transform 7s linear' : 'none',
-                    transform: 'translateX(0%)',
-                    animation: 'progressFill 7s infinite linear'
-                  }}
-                ></div>
-              </div>
-              
-              <button 
-                onClick={() => { setActiveIndex(1); clearInterval(timerRef.current); }}
-                className={`text-[10px] font-bold tracking-widest uppercase transition-colors duration-300 ${activeIndex === 1 ? 'text-[#0f2517]' : 'text-[#0f2517]/30 hover:text-[#0f2517]'}`}
-              >
-                02 MISSION
-              </button>
+              {[0, 1].map((idx) => (
+                <button 
+                  key={`btn-${idx}`}
+                  onClick={() => setActiveIndex(idx)}
+                  className="relative flex flex-col items-start pb-3 w-32 group"
+                >
+                  <span className={`text-[10px] font-bold tracking-widest uppercase transition-colors duration-300 mb-2 ${
+                    activeIndex === idx ? 'text-white' : 'text-white/40 group-hover:text-white/70'
+                  }`}>
+                    0{idx + 1} {idx === 0 ? 'VISION' : 'MISSION'}
+                  </span>
+                  
+                  {/* Track Base */}
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+                    {/* Animated Fill */}
+                    <div 
+                      className="absolute top-0 left-0 h-full bg-[#d4ff00] rounded-full"
+                      style={{
+                        width: activeIndex === idx ? '100%' : '0%',
+                        animation: activeIndex === idx ? 'fillBar 7s linear forwards' : 'none'
+                      }}
+                    ></div>
+                  </div>
+                </button>
+              ))}
 
             </div>
             
@@ -140,10 +152,11 @@ const VisionMission = () => {
 
       </div>
 
+      {/* Global Keyframes for the Progress Bar */}
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes progressFill {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(0%); }
+        @keyframes fillBar {
+          0% { width: 0%; }
+          100% { width: 100%; }
         }
       `}} />
     </section>

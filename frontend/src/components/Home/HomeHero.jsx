@@ -44,12 +44,12 @@ const HomeHero = () => {
       </div>
 
       {/* Floating Accent Text (Top Right) */}
-      <div className="absolute top-32 right-12 md:right-24 z-20 hidden md:flex flex-col items-end rotate-[-5deg] opacity-80">
+      {/* <div className="absolute top-32 right-12 md:right-24 z-20 hidden md:flex flex-col items-end rotate-[-5deg] opacity-80">
          <span className="text-[#3c6e4b] font-serif italic text-2xl">Renewable</span>
          <span className="text-[#3c6e4b] font-serif italic text-2xl -mt-2">Energy</span>
          <span className="text-[#3c6e4b] font-serif italic text-lg -mt-1 pr-4">for a</span>
          <span className="text-[#3c6e4b] font-serif italic text-2xl -mt-1">Better Future</span>
-      </div>
+      </div> */}
 
       {/* MAIN CONTENT WRAPPER */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col h-full justify-center">
