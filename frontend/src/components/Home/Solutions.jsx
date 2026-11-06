@@ -9,7 +9,7 @@ const SolutionCard = ({ solution, index }) => {
       
       {/* Card Header: Number & Icon */}
       <div className="flex justify-between items-start mb-8">
-        <span className="text-5xl font-black text-[#f4f6ef]/20 group-hover:text-white transition-colors duration-500">
+        <span className="text-5xl font-semibold text-[#9bcc4c] group-hover:text-9bcc4c transition-colors duration-500">
           0{index + 1}
         </span>
         <div className="w-10 h-10 rounded-full border border-[#f4f6ef]/20 flex items-center justify-center bg-transparent group-hover:bg-[#d4ff00] group-hover:border-white transition-all duration-500">
@@ -19,10 +19,10 @@ const SolutionCard = ({ solution, index }) => {
 
       {/* Card Content */}
       <div className="flex flex-col">
-        <h3 className="text-2xl font-bold text-[#f4f6ef] mb-4 tracking-tight  transition-colors duration-500">
+        <h3 className="text-[22px] font-semibold text-[#f4f6ef] mb-2 tracking-tight  transition-colors duration-500">
           {solution.title}
         </h3>
-        <p className="text-[#f4f6ef]/75 text-sm md:text-base font-medium leading-relaxed">
+        <p className="text-[#f4f6ef]/75 text-sm md:text-[15px] font-medium leading-relaxed">
           {solution.desc}
         </p>
       </div>

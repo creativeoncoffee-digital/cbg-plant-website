@@ -20,7 +20,7 @@ const StrategicAlliances = () => {
   }, [inView]);
 
   return (
-    <section ref={ref} className="w-full bg-white py-20 md:py-32 px-6 md:px-12">
+    <section ref={ref} className="w-full bg-white py-15 md:py-20 px-6 md:px-12">
       <div ref={containerRef} className="w-full max-w-5xl mx-auto flex flex-col items-center">
         
         {/* Header Section */}
@@ -43,7 +43,7 @@ const StrategicAlliances = () => {
         </div>
 
         {/* Central Divider Decor (Top) */}
-        <div className="w-full flex items-center justify-center mb-16 alliance-anim">
+        {/* <div className="w-full flex items-center justify-center mb-16 alliance-anim">
           <div className="h-[1px] w-full max-w-[200px] bg-gray-300"></div>
           <div className="px-4">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2a633d" xmlns="http://www.w3.org/2000/svg">
@@ -52,10 +52,10 @@ const StrategicAlliances = () => {
             </svg>
           </div>
           <div className="h-[1px] w-full max-w-[200px] bg-gray-300"></div>
-        </div>
+        </div> */}
 
         {/* Split Content Area */}
-        <div className="w-full flex flex-col md:flex-row relative">
+        <div className="w-full md:mt-10 flex flex-col md:flex-row relative">
           
           {/* Central Vertical Line (Desktop only) */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-300 -translate-x-1/2"></div>
@@ -78,7 +78,7 @@ const StrategicAlliances = () => {
               </div>
               
               <div className="flex flex-col">
-                <span className="text-[#3c6e4b] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-1">
+                <span className="text-[#9bcc4c] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-1">
                   JOINT VENTURE PARTNER
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold text-[#0f2517] leading-tight">
@@ -117,7 +117,7 @@ const StrategicAlliances = () => {
               </div>
               
               <div className="flex flex-col">
-                <span className="text-[#3c6e4b] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-1">
+                <span className="text-[#9bcc4c] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-1">
                   TECHNICAL PARTNER
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold text-[#0f2517] leading-tight">
@@ -145,7 +145,7 @@ const StrategicAlliances = () => {
         </div>
 
         {/* Central Divider Decor (Bottom) */}
-        <div className="w-full flex items-center justify-center mt-16 alliance-anim">
+        <div className="w-full flex items-center justify-center mt-20 alliance-anim">
           <div className="h-[1px] w-full max-w-[200px] bg-gray-300"></div>
           <div className="px-4">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#2a633d" xmlns="http://www.w3.org/2000/svg">

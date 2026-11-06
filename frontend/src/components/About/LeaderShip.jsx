@@ -58,7 +58,7 @@ const TeamMemberRow = ({ member, index, isLast }) => {
           
           {/* Role Kicker */}
           <div className={`flex items-center gap-3 mb-2 ${isEven ? 'justify-start' : 'justify-start md:justify-end'}`}>
-            <span className="text-[#3c6e4b] font-bold tracking-[0.15em] uppercase text-[10px] md:text-xs">
+            <span className="text-[#9bcc4c] font-bold tracking-[0.15em] uppercase text-[10px] md:text-xs">
               {member.role}
             </span>
             <div className="h-[1px] w-8 bg-[#3c6e4b]/40"></div>
@@ -137,7 +137,7 @@ const Leadership = () => {
   }, [inView]);
 
   return (
-    <section ref={ref} className="relative w-full bg-[#fcfcfc] py-24 md:py-32 px-1 md:px-2 overflow-hidden">
+    <section ref={ref} className="relative w-full bg-[#fcfcfc] py-16 md:py-20 px-1 md:px-2 overflow-hidden">
       
       {/* Background Decorative Abstract Leaves */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-[#eef5e9] rounded-br-full opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -179,7 +179,7 @@ const Leadership = () => {
         </div>
 
         {/* Bottom Leaf Accent */}
-        <div className="w-full flex justify-center mt-12 md:mt-20">
+        <div className="w-full flex justify-center mt-3 md:mt-5">
           <Leaf className="text-[#3c6e4b] opacity-80" size={24} fill="currentColor" />
         </div>
 

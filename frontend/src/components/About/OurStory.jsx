@@ -26,7 +26,7 @@ const StoryRow = ({ item, index }) => {
     <div ref={ref} className="relative w-full flex flex-col md:flex-row items-start py-10 md:py-16">
       
       {/* Central Badge (Desktop) */}
-      <div className="hidden md:flex absolute left-1/2 top-10 md:top-16 -translate-x-1/2 w-10 h-10 bg-[#163a24] text-white rounded-full items-center justify-center font-bold z-20 shadow-md">
+      <div className="hidden md:flex absolute left-1/2 top-10 md:top-16 -translate-x-1/2 w-10 h-10 bg-[#9bcc4c] text-white rounded-full items-center justify-center font-bold z-20 shadow-md">
         {item.num}
       </div>
 
@@ -142,7 +142,7 @@ const OurStory = () => {
   ];
 
   return (
-    <section ref={ref} className="relative w-full bg-[#fcfdfc] py-20 md:py-32 px-6 md:px-12 border-t border-[#0f2517]/5 overflow-hidden">
+    <section ref={ref} className="relative w-full bg-[#fcfdfc] py-14 md:py-20  px-6 md:px-12 border-t border-[#0f2517]/5 overflow-hidden">
       
       {/* Background Leaves Decor */}
       <div className="absolute top-0 left-0 opacity-40 pointer-events-none -translate-x-1/3 -translate-y-1/3">
@@ -160,7 +160,7 @@ const OurStory = () => {
       <div ref={sectionRef} className="w-full max-w-6xl mx-auto flex flex-col relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-16 md:mb-24">
+        <div className="flex flex-col items-center text-center mb-6 md:mb-8">
           <div className="header-reveal flex items-center gap-4 mb-5">
             <div className="h-[1px] w-10 md:w-16 bg-[#0f2517]/20"></div>
             <span className="text-[#0f2517] font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs">
@@ -193,7 +193,7 @@ const OurStory = () => {
         </div>
 
         {/* Bottom Clean Energy Pill */}
-        <div className="w-full flex justify-center mt-12 md:mt-20 header-reveal">
+        <div className="w-full flex justify-center mt-4 md:mt-8 header-reveal">
           <div className="bg-[#f2f7ef] border border-[#2a633d]/10 px-8 py-4 rounded-full flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow duration-300 cursor-default">
             <Leaf className="text-[#9bcc4c]" size={20} fill="#9bcc4c" />
             <div className="h-6 w-[1px] bg-[#0f2517]/10"></div>

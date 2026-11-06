@@ -100,7 +100,7 @@ const BenefitsSection = () => {
               className="benefit-card group flex flex-col p-6 rounded-[2rem] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 rounded-2xl bg-white/3 flex items-center justify-center text-white mb-6 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-white/3 flex items-center justify-center text-[#9bcc4c] mb-6 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-300">
                 {item.icon}
               </div>
               

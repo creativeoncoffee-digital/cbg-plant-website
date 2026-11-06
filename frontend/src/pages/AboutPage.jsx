@@ -6,7 +6,7 @@ import VisionMission from '../components/About/VisionMission';
 import ImpactSection from '../components/Home/ImpactSection';
 // import AboutSection from '../components/About/AboutSection';
 import MarqueeBanner from '../components/MarqueBanner';
-import BanefitsSection from '../components/About/BenefitsSection';
+// import BanefitsSection from '../components/About/BenefitsSection';
 import FAQ from '../components/Faq';
 
 const AboutPage = () => {
@@ -14,15 +14,16 @@ const AboutPage = () => {
     <>
       <AboutHero />
       <MarqueeBanner  />
+       <VisionMission />
+      <OurStory />
+      
+       {/* <BanefitsSection /> */}
       {/* < AboutSection /> */}
         
-      <ImpactSection />
-       <BanefitsSection />
-   
-      <OurStory />
-      <VisionMission />
       <Leadership />
+        <ImpactSection />
       <StrategicAlliances />
+     
       <FAQ category="about" />
     </>
   );

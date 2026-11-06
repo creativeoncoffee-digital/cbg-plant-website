@@ -178,7 +178,7 @@ const ImpactMap = () => {
               <div className="w-full flex flex-col transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
                 
                 <div className="mb-6">
-                  <h3 className="text-4xl md:text-5xl font-semibold text-[#0f2517] tracking-tight mb-2">
+                  <h3 className="text-3xl md:text-4xl font-semibold text-[#0f2517] tracking-tight mb-2">
                     {activeLocation.city}
                   </h3>
                   <p className="text-sm font-bold text-[#3c6e4b] uppercase tracking-[0.2em]">
@@ -186,35 +186,35 @@ const ImpactMap = () => {
                   </p>
                 </div>
 
-                <div className="mb-8 flex items-baseline gap-3">
-                  <span className="text-6xl font-black text-[#0f2517]">
+                <div className="mb-4 flex items-baseline gap-3">
+                  <span className="text-5xl font-semibold text-[#0f2517]">
                     {activeLocation.installations}
                   </span>
-                  <span className="text-sm font-bold text-[#0f2517]/50 uppercase tracking-widest">
+                  <span className="text-md font-bold text-[#9bcc4c] uppercase tracking-widest">
                     Active Projects
                   </span>
                 </div>
 
-                <p className="text-[#0f2517]/80 text-lg leading-relaxed font-medium mb-10 max-w-lg">
+                <p className="text-[#0f2517]/80 text-md leading-relaxed font-medium mb-6 max-w-lg">
                   {activeLocation.description}
                 </p>
 
-                <div className="mb-12">
+                <div className="mb-8">
                   <h4 className="text-sm font-bold text-[#0f2517] uppercase tracking-widest mb-6 block">
                     Key Infrastructure
                   </h4>
-                  <ul className="flex flex-col gap-4">
+                  <ul className="flex flex-col gap-2">
                     {activeLocation.services.map((service, index) => (
                       <li key={index} className="flex items-center gap-3 text-base font-bold text-[#0f2517]/80">
-                        <FiCheckCircle className="text-[#3c6e4b] w-5 h-5 shrink-0" />
+                        <FiCheckCircle className="text-[#9bcc4c] w-5 h-5 shrink-0" />
                         {service}
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <button className="w-fit bg-[#0f2517] text-[#d4ff00] px-4 py-4 rounded-xl font-semibold uppercase tracking-relaxed text-sm hover:bg-[#3c6e4b] hover:text-white transition-all duration-300 shadow-lg">
-                  Explore All CBG Plants
+                <button className="w-fit bg-[#3c6e4b] text-[#] px-4 py-4 rounded-xl font-semibold uppercase tracking-relaxed text-sm hover:bg-[#9bcc4c] hover:text-white transition-all duration-300 shadow-lg">
+                  Explore CBG Plants
                 </button>
                 
               </div>

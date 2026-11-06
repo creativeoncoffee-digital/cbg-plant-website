@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center justify-center space-x-8 w-2/4">
             <Link to="/" className={navLinkStyle}>Home</Link>
             <Link to="/about" className={navLinkStyle}>About Us</Link>
-            <Link to="/*" className={navLinkStyle}>CBG</Link>
+            <Link to="/cbg" className={navLinkStyle}>CBG</Link>
             <Link to="/blogs" className={navLinkStyle}>Blogs</Link>
             <Link to="/contact" className={navLinkStyle}>Contact</Link>
           </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
           <div className="px-6 py-6 flex flex-col space-y-5">
             <Link to="/" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Home</Link>
             <Link to="/about" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>About Us</Link>
-            <Link to="*" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>CBG</Link>
+            <Link to="/cbg" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>CBG</Link>
             <Link to="/blogs" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Blogs</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Contact</Link>
             

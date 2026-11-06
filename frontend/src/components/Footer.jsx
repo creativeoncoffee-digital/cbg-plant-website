@@ -74,10 +74,13 @@ const Footer = () => {
       {/* Bottom Copyright & Socials */}
       <div className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-6 border-t border-[#f4f6ef]/10 pt-6">
         
-        <p className="text-[#f4f6ef]/50 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em]">
+        <p className="text-[#f4f6ef]/50 text-[10px] md:text-xs font-semibold uppercase tracking-[0.1em]">
           &copy; {new Date().getFullYear()} EcoCBG. All rights reserved.
         </p>
         
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link to="https://creativeoncoffee.com/" target="_blank" className="text-slate-200 text-xs hover:text-white transition-colors">Design & Developed By Creative On Coffee</Link>
+          </div>
         {/* Social Icons */}
         <div className="flex items-center gap-2">
           {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, i) => (
