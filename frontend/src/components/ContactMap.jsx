@@ -28,7 +28,7 @@ const ContactMap = () => {
           
           {/* Header Info */}
           <div className="contact-elem flex flex-col mb-12">
-            <h2 className="text-4xl md:text-[2.75rem] font-black text-[#0f2517] leading-[1.1] mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0f2517] leading-[1] mb-4 tracking-tight">
               How can we help?
             </h2>
             <p className="text-[#0f2517]/70 text-base font-medium mb-8">
@@ -39,12 +39,12 @@ const ContactMap = () => {
             <div className="flex flex-col gap-3 mb-10">
               <div className="flex items-center gap-3">
                 <span className="text-xl">📍</span>
-                <span className="text-[#3c6e4b] font-bold text-sm">Sector 27 Industrial Area, Faridabad, Haryana</span>
+                <span className="text-[#3c6e4b] font-bold text-sm">Sector  xx  noida xx </span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl">📞</span>
                 <a href="tel:+919876543210" className="text-[#3c6e4b] font-bold text-sm hover:text-[#0f2517] transition-colors">
-                  +91 98765 43210
+                  +91 98765 xxxx
                 </a>
               </div>
               <div className="flex items-center gap-3">

@@ -58,14 +58,14 @@ const Footer = () => {
             Connect
           </span>
           <address className="not-italic text-[#f4f6ef]/70 text-sm font-medium leading-relaxed mb-4">
-            Sector 27 Industrial Area,<br />
-            Faridabad, Haryana 121003
+            Sector xx ,<br />
+             xx noida xx
           </address>
           <a href="mailto:projects@RyvedraCBG.com" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors mb-2 block">
             projects@RyvedraCBG.com
           </a>
           <a href="tel:+919876543210" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors block">
-            +91 98765 43210
+            +91 98765 xxxx
           </a>
         </div>
 
