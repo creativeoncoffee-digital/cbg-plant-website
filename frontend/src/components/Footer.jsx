@@ -58,14 +58,14 @@ const Footer = () => {
             Connect
           </span>
           <address className="not-italic text-[#f4f6ef]/70 text-sm font-medium leading-relaxed mb-4">
-            Sector xx ,<br />
-             xx noida xx
+        Ryverda Energies Private Limited<br />
+                R9HR+3GX, Karmaha, Gorakhpur, Amwa, Uttar Pradesh 273013
           </address>
-          <a href="mailto:projects@RyvedraCBG.com" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors mb-2 block">
-            projects@RyvedraCBG.com
+          <a href="mailto:ryverdaenergy@gmail.com" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors mb-2 block">
+           ryverdaenergy@gmail.com
           </a>
-          <a href="tel:+919876543210" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors block">
-            +91 98765 xxxx
+          <a href="tel:+917002134878" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors block">
+           +91 70021 34878
           </a>
         </div>
 

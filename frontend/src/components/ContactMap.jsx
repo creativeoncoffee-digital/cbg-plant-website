@@ -36,21 +36,22 @@ const ContactMap = () => {
             </p>
             
             {/* Quick Contact Links */}
-            <div className="flex flex-col gap-3 mb-10">
+            <div className="flex flex-col gap-3 mb-2">
               <div className="flex items-center gap-3">
                 <span className="text-xl">📍</span>
-                <span className="text-[#3c6e4b] font-bold text-sm">Sector  xx  noida xx </span>
+                <span className="text-[#3c6e4b] font-bold text-sm">Ryverda Energies Private Limited<br />
+                R9HR+3GX, Karmaha, Gorakhpur, Amwa, Uttar Pradesh 273013</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl">📞</span>
-                <a href="tel:+919876543210" className="text-[#3c6e4b] font-bold text-sm hover:text-[#0f2517] transition-colors">
-                  +91 98765 xxxx
+                <a href="tel:+917002134878" className="text-[#3c6e4b] font-bold text-sm hover:text-[#0f2517] transition-colors">
+                  +91 70021 34878
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-xl">✉️</span>
                 <a href="mailto:projects@RyvedraCBG.com" className="text-[#3c6e4b] font-bold text-sm hover:text-[#0f2517] transition-colors">
-                  projects@RyvedraCBG.com
+                  ryverdaenergy@gmail.com
                 </a>
               </div>
             </div>
@@ -140,17 +141,18 @@ const ContactMap = () => {
 
         {/* RIGHT SIDE: Large Clean Map */}
         <div className="w-full lg:w-7/12 contact-elem">
-          <div className="w-full h-full min-h-[400px] lg:min-h-full rounded-2xl overflow-hidden bg-[#f4f6ef] relative shadow-lg border border-[#0f2517]/5">
-            {/* The Map */}
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112328.66597258352!2d77.22728448834015!3d28.381395878951012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc15f5a424b1%3A0xe37ea6e241891535!2sFaridabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-              className="absolute inset-0 w-full h-full border-0 opacity-80 mix-blend-multiply"
-              allowFullScreen="" 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Headquarters Location"
-            ></iframe>
-          </div>
+         <div className="w-full h-full min-h-[400px] lg:min-h-full rounded-2xl overflow-hidden bg-[#f4f6ef] relative shadow-lg border border-[#0f2517]/5">
+  {/* The Map */}
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.3837343592827!2d83.3913544!3d26.8277446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399145001861b2cb%3A0xd03d2698fac91ce!2sRyverda%20Energies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1794570524220!5m2!1sen!2sin" 
+    className="absolute inset-0 w-full h-full border-0 opacity-80 mix-blend-multiply"
+    style={{ border: 0 }}
+    allowFullScreen={true} 
+    loading="lazy" 
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Headquarters Location"
+  ></iframe>
+</div>
         </div>
 
       </div>

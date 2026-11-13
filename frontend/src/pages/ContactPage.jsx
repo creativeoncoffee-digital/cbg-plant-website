@@ -182,8 +182,8 @@ const ContactPage = () => {
           <div className="w-full lg:w-1/2 contact-elem mt-8 lg:mt-0">
             <div className="w-full h-[400px] lg:h-full lg:min-h-[600px] rounded-[1.5rem] overflow-hidden bg-[#f4f6ef] relative shadow-lg border border-[#0f2517]/5">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112328.66597258352!2d77.22728448834015!3d28.381395878951012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc15f5a424b1%3A0xe37ea6e241891535!2sFaridabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                className="absolute inset-0 w-full h-full border-0 opacity-80 mix-blend-multiply"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.3837343592827!2d83.3913544!3d26.8277446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399145001861b2cb%3A0xd03d2698fac91ce!2sRyverda%20Energies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1794570524220!5m2!1sen!2sin" 
+    className="absolute inset-0 w-full h-full border-0 opacity-80 mix-blend-multiply"
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"

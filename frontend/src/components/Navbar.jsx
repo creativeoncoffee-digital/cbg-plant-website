@@ -64,7 +64,7 @@ const Navbar = () => {
             
             {/* Phone/Search Icon Circle */}
             <a 
-              href="tel:+15551234567" 
+              href="tel:+917002134878"
               className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 border ${
                 isWhiteNav 
                   ? 'border-[#0f2517]/20 text-[#0f2517] hover:border-[#3c6e4b] hover:text-[#3c6e4b] bg-white' 
