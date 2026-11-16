@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { FiCheckCircle } from "react-icons/fi";
@@ -6,6 +7,7 @@ import SVG from "react-inlinesvg";
 import map from '../../assets/Home/in.svg';
 
 const ImpactMap = () => {
+  const navigate = useNavigate();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
   const containerRef = useRef(null);
 
@@ -213,7 +215,11 @@ const ImpactMap = () => {
                   </ul>
                 </div>
                 
-                <button className="w-fit bg-[#3c6e4b] text-[#] px-4 py-4 rounded-xl font-semibold uppercase tracking-relaxed text-sm hover:bg-[#9bcc4c] hover:text-white transition-all duration-300 shadow-lg">
+                <button
+                  type="button"
+                  onClick={() => navigate('/cbg')}
+                  className="w-fit bg-[#3c6e4b] text-[#] px-4 py-4 rounded-xl font-semibold uppercase tracking-relaxed text-sm hover:bg-[#9bcc4c] hover:text-white transition-all duration-300 shadow-lg"
+                >
                   Explore CBG Plants
                 </button>
                 
@@ -225,7 +231,11 @@ const ImpactMap = () => {
                   Click on any highlighted region or marker on the map to view detailed project infrastructure and active installations in that area.
                 </p>
                 
-                <button className="w-fit bg-[#3c6e4b] text-white px-3 py-3 rounded-xl font-semibold uppercase tracking-relaxed text-sm  transition-all duration-300 shadow-lg">
+                <button
+                  type="button"
+                  onClick={() => navigate('/cbg')}
+                  className="w-fit bg-[#3c6e4b] text-white px-3 py-3 rounded-xl font-semibold uppercase tracking-relaxed text-sm  transition-all duration-300 shadow-lg"
+                >
                   Explore All CBG Plants
                 </button>
               </div>

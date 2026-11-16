@@ -2,10 +2,12 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { MessageCircle, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ExpertCTA = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const containerRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
@@ -57,7 +59,11 @@ const ExpertCTA = () => {
 
           {/* Premium CTA Button matching the orange accent from your reference */}
           <div className="cta-text-anim">
-            <button className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-800 rounded-full overflow-hidden transition-all duration-300 shadow-[0_10px_30px_rgba(255,107,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,107,0,0.4)] hover:-translate-y-1">
+            <button
+              type="button"
+              onClick={() => navigate('/contact')}
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-800 rounded-full overflow-hidden transition-all duration-300 shadow-[0_10px_30px_rgba(255,107,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,107,0,0.4)] hover:-translate-y-1"
+            >
               <MessageCircle size={20} className="relative z-10" />
               <span className="relative z-10 font-bold text-sm tracking-wide">
               Contact Our Experts

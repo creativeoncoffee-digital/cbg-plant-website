@@ -78,7 +78,7 @@ const ImpactSection = () => {
 
           <div className="impact-elem">
             <Link 
-              to="/impact" 
+              to="/contact"
               className="group inline-flex items-center gap-3 bg-[#3c6e4b] text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-[#3c6e4b] transition-all duration-300 shadow-md"
             >
               Our Impact in Numbers

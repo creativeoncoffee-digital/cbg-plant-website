@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight, Play } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 // Make sure this image path is correct, or use a high-quality external URL
 import HeroPic from '../../assets/Home/hero-biogas-bg.webp'; 
 
 const HomeHero = () => {
   const heroRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,7 +83,7 @@ const HomeHero = () => {
             
             {/* Animated Flowing Water/Rays Button */}
             <a 
-              href="/solutions" 
+              href="/contact"
               className="group relative overflow-hidden flex items-center gap-3 text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               {/* Animated Background Layer */}
@@ -99,7 +101,11 @@ const HomeHero = () => {
             </a>
 
             {/* Watch Story Button */}
-            <button className="group flex items-center gap-4 hover:opacity-80 transition-opacity">
+            <button
+              type="button"
+              onClick={() => navigate('/contact')}
+              className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
+            >
               <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#0f2517]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Play className="text-[#0f2517] ml-1" size={18} fill="#0f2517" />
               </div>

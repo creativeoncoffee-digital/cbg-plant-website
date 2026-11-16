@@ -81,7 +81,7 @@ const ServicesGrid = () => {
           
           <div className="service-text">
             <Link 
-              to="/services" 
+              to="/cbg"
               className="group inline-flex items-center gap-3 bg-[#3c6e4b] text-white px-7 py-3 rounded-full font-semibold text-sm hover:bg-[#9bcc4c] transition-all duration-300 shadow-md"
             >
               More About  Services

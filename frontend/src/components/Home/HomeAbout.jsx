@@ -79,7 +79,7 @@ const AboutUs = () => {
           {/* Outlined Button */}
           <div className="about-text-anim">
             <Link 
-              to="/about" 
+              to="/about"
               className="group inline-flex items-center gap-3 border-[1.5px] border-[#3c6e4b] text-[#3c6e4b] px-7 py-3 rounded-full font-bold text-sm hover:bg-[#3c6e4b] hover:text-white transition-all duration-300 w-fit"
             >
               Learn More About Us

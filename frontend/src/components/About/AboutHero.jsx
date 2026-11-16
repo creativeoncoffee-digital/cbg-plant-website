@@ -47,7 +47,7 @@ const AboutHero = () => {
           
           <div className="about-hero-anim">
             <Link 
-              to="/services" 
+              to="/blogs"
               className="group inline-flex items-center gap-3 border border-[#9bcc4c] text-[#3c6e4b] px-7 py-3 rounded-full font-bold text-sm hover:bg-[#3c6e4b] hover:text-white transition-all duration-300 w-fit"
             >
               Learn More About Us

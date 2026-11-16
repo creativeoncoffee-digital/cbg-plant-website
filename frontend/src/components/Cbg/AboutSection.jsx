@@ -101,7 +101,7 @@ const AboutSection = () => {
 
            {/* Animated Flowing Water/Rays Button */}
             <a 
-              href="/solutions" 
+              href="/contact"
               className="about-text-anim group relative overflow-hidden flex items-center gap-3 text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               {/* Animated Background Layer */}
