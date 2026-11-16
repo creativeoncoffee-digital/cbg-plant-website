@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CustomCursor from './components/CustomCursor';
 import PageTransition from './components/PageTransition';
+ import ThankYouPage from './pages/ThankYouPage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/blogs" element={<BlogsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
+              <Route path="/thank-you" element={<ThankYouPage />} />
             </Routes>
             </PageTransition>
           </main>
