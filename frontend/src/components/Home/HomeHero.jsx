@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ArrowRight, Play } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+// import { useNavigate } from 'react-router-dom';
 // Make sure this image path is correct, or use a high-quality external URL
 import HeroPic from '../../assets/Home/hero-biogas-bg.webp'; 
 
 const HomeHero = () => {
   const heroRef = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -100,7 +100,7 @@ const HomeHero = () => {
               <ArrowRight size={16} className="relative z-10 transform group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Watch Story Button */}
+            {/* Watch Story Button
             <button
               type="button"
               onClick={() => navigate('/contact')}
@@ -109,11 +109,11 @@ const HomeHero = () => {
               <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#0f2517]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Play className="text-[#0f2517] ml-1" size={18} fill="#0f2517" />
               </div>
-              <div className="flex flex-col text-left">
+              {/* <div className="flex flex-col text-left">
                 <span className="text-[#0f2517] font-bold text-sm">Watch Our Story</span>
                 <span className="text-[#0f2517]/50 font-bold text-xs">2:16</span>
-              </div>
-            </button>
+              </div> }
+            </button> */}
 
           </div>
 

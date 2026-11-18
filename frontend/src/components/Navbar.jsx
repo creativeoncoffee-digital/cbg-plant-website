@@ -21,11 +21,11 @@ const Navbar = () => {
   const forceWhiteNav = location.pathname.includes('/blogs') || location.pathname.includes('/contact'); // location.pathname.includes('/blogs') || location.pathname.includes('/contact')
   const isWhiteNav = isScrolled || forceWhiteNav;
 
-  // Dynamic Styles
-  const navLinkStyle = `text-sm font-bold transition-all duration-300 relative after:absolute after:bottom-[-6px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 ${
+// Dynamic Styles
+  const navLinkStyle = `text-sm font-semibold transition-all duration-300 relative after:absolute after:bottom-[-6px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:transition-all after:duration-300 ${
     isWhiteNav 
       ? 'text-[#0f2517] hover:text-[#3c6e4b] after:bg-[#3c6e4b]' 
-      : 'text-[#0f2517] hover:text-[#3c6e4b] after:bg-[#3c6e4b]' // Changed to be dark by default to match the new white hero
+      : 'text-[#0f2517] hover:text-[#3c6e4b] after:bg-[#3c6e4b]' 
   }`;
 
   return (
@@ -40,18 +40,16 @@ const Navbar = () => {
           {/* Left: Logo */}
           <div className="flex items-center md:w-1/4">
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src={Logo} 
-                alt="CBG Plant Logo" 
-                className={`h-8 md:h-10 w-auto object-contain transition-all duration-300 ${
-                  isWhiteNav ? 'brightness-70' : 'brightness-0' // Always black/dark to match white hero
-                }`} 
-              />  
+            <img 
+  src={Logo} 
+  alt="Ryverda Energies Logo" 
+  className="h-10 md:h-12 w-auto object-contain transition-all duration-300 "
+/> 
             </Link>
           </div>
 
           {/* Center: Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-8 w-2/4">
+          <div className="hidden md:flex  items-center justify-center space-x-8 w-2/4">
             <Link to="/" className={navLinkStyle}>Home</Link>
             <Link to="/about" className={navLinkStyle}>About Us</Link>
             <Link to="/cbg" className={navLinkStyle}>CBG</Link>
@@ -77,7 +75,7 @@ const Navbar = () => {
             {/* Pill-Shaped Get in Touch Button */}
             <Link
               to="/contact"
-              className={`group relative overflow-hidden px-8 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+              className={`group relative overflow-hidden px-8 py-3 rounded-full font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                 isWhiteNav 
                   ? 'bg-[#3c6e4b] text-white hover:bg-[#2c8450]' 
                   : 'bg-[#d4ff00] text-[#0f2517]'
@@ -106,11 +104,11 @@ const Navbar = () => {
       {isOpen && (
         <div className={`md:hidden absolute top-full left-0 w-full shadow-2xl transition-all duration-300 border-t ${isWhiteNav ? 'bg-white border-[#0f2517]/10' : 'bg-white border-[#0f2517]/10'}`}>
           <div className="px-6 py-6 flex flex-col space-y-5">
-            <Link to="/" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Home</Link>
-            <Link to="/about" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>About Us</Link>
-            <Link to="/cbg" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>CBG</Link>
-            <Link to="/blogs" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Blogs</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className={`font-bold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Contact</Link>
+            <Link to="/" onClick={() => setIsOpen(false)} className={`font-semibold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Home</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className={`font-semibold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>About Us</Link>
+            <Link to="/cbg" onClick={() => setIsOpen(false)} className={`font-semibold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>CBG</Link>
+            <Link to="/blogs" onClick={() => setIsOpen(false)} className={`font-semibold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Blogs</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className={`font-semibold text-lg tracking-wide uppercase ${isWhiteNav ? 'text-[#0f2517] hover:text-[#3c6e4b]' : 'text-[#0f2517] hover:text-[#3c6e4b]'}`}>Contact</Link>
             
             <div className={`pt-6 border-t flex flex-col gap-4 ${isWhiteNav ? 'border-[#0f2517]/10' : 'border-[#0f2517]/10'}`}>
               <Link to="/contact" onClick={() => setIsOpen(false)} className={`rounded-full px-6 py-4 font-black text-center uppercase tracking-widest transition-colors ${isWhiteNav ? 'bg-[#9bcc4c] text-[#0f2517]' : 'bg-[#d4ff00] text-[#0f2517]'}`}>

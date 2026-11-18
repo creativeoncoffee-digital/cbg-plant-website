@@ -101,20 +101,23 @@ const Manifesto = () => {
                 </h3>
               </div>
               
-              <p className="text-[#0f2517]/75 text-base md:text-lg leading-relaxed font-medium pb-2 pr-4 md:pr-10">
+              <p className="text-[#0f2517]/75 text-base md:text-medium leading-relaxed font-medium pb-2 pr-4 md:pr-10">
                 {currentItem.text}
               </p>
             </div>
 
             {/* Bottom Controls: Contact Button & Arrows */}
             <div className="manifesto-reveal mt-8 pl-6 flex flex-wrap items-center gap-6">
-              <Link 
-                to="/contact" 
-                className="group inline-flex items-center gap-4 bg-[#3c6e4b] text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-[#0f2517] transition-colors duration-300 shadow-md w-fit"
-              >
-                Contact Us
-                <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-              </Link>
+             {/* Outlined Button */}
+          <div className="about-text-anim">
+            <Link 
+              to="/contact"
+              className="group inline-flex items-center gap-3 border-[1.5px] border-[#3c6e4b] text-[#3c6e4b] px-7 py-3 rounded-full font-bold text-sm bg-[#3c6e4b] text-white transition-all duration-300 w-fit"
+            >
+              Learn More About Us
+              <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
               {/* Navigation Arrows */}
               <div className="flex items-center gap-3">

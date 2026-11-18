@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/FooterLogo.png';
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
             <img 
               src={Logo} 
               alt="Company Logo" 
-              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+              className="h-10 md:h-12 w-auto object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextSibling.style.display = 'block';
@@ -25,14 +25,14 @@ const Footer = () => {
               Ryvedra<span className="text-[#d4ff00]">CBG</span>
             </span>
           </Link>
-          <p className="text-[#f4f6ef]/70 text-sm font-medium leading-relaxed">
+          <p className="text-[#f4f6ef]/70 text-sm font-sm leading-relaxed">
             Leading the transition to sustainable energy through advanced Compressed Biogas solutions. We design, engineer, and operate the infrastructure of tomorrow.
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="flex flex-col w-full md:w-auto">
-          <span className="text-[#3c6e4b] font-bold tracking-[0.2em] uppercase text-xs mb-5 block">
+          <span className="text-[#3c6e4b] font-bold tracking-[0.1em] uppercase text-xs mb-5 block">
             Navigation
           </span>
           <ul className="flex flex-col gap-3">
@@ -44,7 +44,7 @@ const Footer = () => {
               { name: 'Contact', path: '/contact' }
             ].map((item, i) => (
               <li key={i}>
-                <Link to={item.path} className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors duration-300">
+                <Link to={item.path} className="text-[#f4f6ef]/90 font-sm text-sm hover:text-[#d4ff00] transition-colors duration-300">
                   {item.name}
                 </Link>
               </li>
@@ -54,17 +54,17 @@ const Footer = () => {
 
         {/* Contact Snippet */}
         <div className="flex flex-col w-full md:w-auto">
-          <span className="text-[#3c6e4b] font-bold tracking-[0.2em] uppercase text-xs mb-5 block">
+          <span className="text-[#3c6e4b] font-bold tracking-[0.1em] uppercase text-xs mb-5 block">
             Connect
           </span>
-          <address className="not-italic text-[#f4f6ef]/70 text-sm font-medium leading-relaxed mb-4">
+          <address className="not-italic text-[#f4f6ef]/70 text-sm font-sm leading-relaxed mb-4">
         Ryverda Energies Private Limited<br />
                 R9HR+3GX, Karmaha, Gorakhpur, Amwa, Uttar Pradesh 273013
           </address>
-          <a href="mailto:ryverdaenergy@gmail.com" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors mb-2 block">
+          <a href="mailto:ryverdaenergy@gmail.com" className="text-[#f4f6ef]/90 font-sm text-sm hover:text-[#d4ff00] transition-colors mb-2 block">
            ryverdaenergy@gmail.com
           </a>
-          <a href="tel:+917002134878" className="text-[#f4f6ef]/90 font-medium text-sm hover:text-[#d4ff00] transition-colors block">
+          <a href="tel:+917002134878" className="text-[#f4f6ef]/90 font-sm text-sm hover:text-[#d4ff00] transition-colors block">
            +91 70021 34878
           </a>
         </div>
