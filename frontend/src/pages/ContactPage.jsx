@@ -44,6 +44,7 @@ const ContactPage = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const containerRef = useRef(null);
   const navigate = useNavigate();
+  const backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
   
   // Form State
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,7 +77,7 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact/submit', {
+      const response = await fetch(`${backendUrl}/api/contact/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
