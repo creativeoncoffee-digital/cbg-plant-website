@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import { ArrowRight, Leaf } from 'lucide-react';
+import Ritesh from '../../assets/About/Ritesh Shah.jpeg';
+import Yogesh from '../../assets/About/Yogesh Narayan Tiwari.jpeg';
+import Ashutosh from '../../assets/About/Ashutosh.png';
 
 const TeamMemberRow = ({ member, index, isLast }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -108,19 +111,19 @@ const Leadership = () => {
       name: "Ritesh Shah",
       role: "Founder & CEO",
       desc: "Coming from a strong Commerce and Accountancy background, Ritesh brings sharp financial intuition, administrative clarity, and operational management to our organization. Stepping into the bio-energy sector, he has developed a grounded understanding of plant operations, regulatory compliance, and business dynamics. As Founder and CEO, Ritesh excels at managing multi-faceted organizational challenges, maintaining corporate governance, and making the crucial strategic calls that drive our growth forward.",
-      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+      img: Ritesh
     },
     {
       name: "Ashutosh Kumar Dixit",
       role: "Chief Management Officer & Mentor",
       desc: "Holding an MBA in Marketing and International Business, Ashutosh serves as our Chief Management Officer, strategic bedrock, and guiding mentor. Despite his extensive agricultural landholdings, his leadership remains deeply rooted in character, long-term vision, and connection to the soil. Through insightful mentorship and masterly communication, he resolves complex operational friction and guides our high-level corporate roadmap with systemic foresight.",
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+      img: Ashutosh
     },
     {
       name: "Yogesh Narayan Tiwari",
       role: "Co-Founder & COO",
       desc: "A Computer Science Engineer specializing in Cybersecurity, Yogesh serves as the technical backbone and operational engine of our organization. He brings a rigorous, systems-level engineering mindset to our Compressed Biogas infrastructure—mastering the complexities of membrane gas separation, anaerobic digestion dynamics, plant machinery, and agrobiotic processes. As Co-Founder and COO, Yogesh combines technical intellect with systematic execution to streamline complex technical architectures and regulatory workflows into seamless industrial operations.",
-      img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop"
+      img: Yogesh
     }
   ];
 

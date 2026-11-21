@@ -1,15 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ArrowUpRight } from 'lucide-react';
 
 const SolutionCard = ({ solution, index }) => {
   return (
-    <div className="solution-card flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-[#0f2517]/40  border border-[#f4f6ef]/10 hover:bg-[#143220]/60 hover:border-white transition-all duration-500 hover:-translate-y-2 group min-h-[250px] shadow-2xl">
-      
+    <Link
+      to="/cbg"
+      className="solution-card flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-[#0f2517]/40 border border-[#f4f6ef]/10 hover:bg-[#143220]/60 hover:border-white transition-all duration-500 hover:-translate-y-2 group min-h-[250px] shadow-2xl cursor-pointer relative z-20"
+    >
       {/* Card Header: Number & Icon */}
       <div className="flex justify-between items-start mb-8">
-        <span className="text-5xl font-semibold text-[#9bcc4c] group-hover:text-9bcc4c transition-colors duration-500">
+        <span className="text-5xl font-semibold text-[#9bcc4c] transition-colors duration-500">
           0{index + 1}
         </span>
         <div className="w-10 h-10 rounded-full border border-[#f4f6ef]/20 flex items-center justify-center bg-transparent group-hover:bg-[#d4ff00] group-hover:border-white transition-all duration-500">
@@ -19,15 +22,14 @@ const SolutionCard = ({ solution, index }) => {
 
       {/* Card Content */}
       <div className="flex flex-col">
-        <h3 className="text-[22px] font-semibold text-[#f4f6ef] mb-2 tracking-tight  transition-colors duration-500">
+        <h3 className="text-[22px] font-semibold text-[#f4f6ef] mb-2 tracking-tight transition-colors duration-500">
           {solution.title}
         </h3>
         <p className="text-[#f4f6ef]/75 text-sm md:text-[15px] font-medium leading-relaxed">
           {solution.desc}
         </p>
       </div>
-
-    </div>
+    </Link>
   );
 };
 
@@ -75,7 +77,6 @@ const Solutions = () => {
   ];
 
   return (
-  
     <section className="relative w-full py-24 md:py-32 px-6 md:px-12 bg-fixed bg-center bg-cover border-t border-[#f4f6ef]/10" 
       style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop')" }}
     >
@@ -92,7 +93,7 @@ const Solutions = () => {
           {/* Header Section */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-16 md:mb-20">
             <div className="flex flex-col w-full md:w-2/3">
-              <span className="sol-header text-[#d4ff00]  tracking-[0.2em] uppercase text-xs mb-4 block drop-shadow-md">
+              <span className="sol-header text-[#d4ff00] tracking-[0.2em] uppercase text-xs mb-4 block drop-shadow-md">
                 Solutions Ecosystem
               </span>
               <h2 className="sol-header text-4xl md:text-5xl font-semibold text-[#f4f6ef] tracking-tight leading-[1.1]">
@@ -102,7 +103,7 @@ const Solutions = () => {
             </div>
 
             <div className="sol-header w-full md:w-1/3">
-              <p className="text-[#f4f6ef]/80 text-md  leading-relaxed tracking-tight  pl-4">
+              <p className="text-[#f4f6ef]/80 text-md leading-relaxed tracking-tight pl-4">
                 Three connected CBG plant solutions for turning organic waste into clean fuel and measurable operational value.
               </p>
             </div>
