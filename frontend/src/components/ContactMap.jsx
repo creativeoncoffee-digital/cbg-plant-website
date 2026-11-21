@@ -8,7 +8,9 @@ const ContactMap = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const formRef = useRef(null);
   const navigate = useNavigate();
-  const backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
+ const backendUrl = (
+  import.meta.env.VITE_BACKEND_URL || "https://cbg-plant-website-le34.vercel.app"
+).replace(/\/$/, "");
 
   // Form State
   const [isSubmitting, setIsSubmitting] = useState(false);
